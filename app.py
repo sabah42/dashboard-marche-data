@@ -2,33 +2,25 @@
 # IMPORTS
 # =========================
 
-# Streamlit pour créer l'application web
 import streamlit as st
-
-# Plotly Express pour créer les graphiques
 import plotly.express as px
-
-# Pandas pour manipuler les données
 import pandas as pd
-
-# Base64 pour afficher le logo dans le header
 import base64
-
-# JSON pour lire le fichier geojson des départements
 import json
-
-# Fonction perso qui récupère les données de l'API France Travail
 from src.api_offres import get_offres_data_multi
 
-import streamlit.components.v1 as components
-import streamlit as st
 from streamlit_gtag import st_gtag
+
+# =========================
+# CONFIGURATION
+# =========================
 
 st.set_page_config(
     page_title="Marché du travail de la data en France",
     layout="wide"
 )
 
+# Google Analytics
 st_gtag(
     gtag_id="G-K4JYKF6K5H",
     config={
@@ -44,19 +36,7 @@ st.set_page_config(
     page_title="Marché du travail de la data en France",
     layout="wide"
 )
-components.html(
-    """
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4JYKF6K5H"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-K4JYKF6K5H');
-    </script>
-    """,
-    height=0,
-)
+
 
 # =========================
 # CSS / STYLE VISUEL
