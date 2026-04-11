@@ -19,14 +19,6 @@ st.set_page_config(
     page_title="Marché du travail de la data en France",
     layout="wide"
 )
-
-# Google Analytics
-st_gtag(
-    gtag_id="G-K4JYKF6K5H",
-    config={
-        "send_page_view": True
-    }
-)
 # =========================
 # CONFIGURATION DE LA PAGE
 # =========================
@@ -36,6 +28,15 @@ st.set_page_config(
     page_title="Marché du travail de la data en France",
     layout="wide"
 )
+# Google Analytics
+st_gtag(
+    gtag_id="G-K4JYKF6K5H",
+    config={
+        "send_page_view": True
+    }
+)
+
+
 
 
 # =========================
