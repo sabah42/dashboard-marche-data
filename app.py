@@ -19,17 +19,8 @@ import json
 
 # Fonction perso qui récupère les données de l'API France Travail
 from src.api_offres import get_offres_data_multi
-st.markdown("""
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K4JYKF6K5H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-K4JYKF6K5H');
-</script>
-""", unsafe_allow_html=True)
+import streamlit.components.v1 as components
 
 # =========================
 # CONFIGURATION DE LA PAGE
@@ -40,7 +31,19 @@ st.set_page_config(
     page_title="Marché du travail de la data en France",
     layout="wide"
 )
-
+components.html(
+    """
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4JYKF6K5H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K4JYKF6K5H');
+    </script>
+    """,
+    height=0,
+)
 
 # =========================
 # CSS / STYLE VISUEL
