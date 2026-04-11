@@ -15,10 +15,6 @@ from streamlit_gtag import st_gtag
 # CONFIGURATION
 # =========================
 
-st.set_page_config(
-    page_title="Marché du travail de la data en France",
-    layout="wide"
-)
 # =========================
 # CONFIGURATION DE LA PAGE
 # =========================
