@@ -1,6 +1,5 @@
 streamlit
+pandas
 plotly
 requests
-pandas
-python-dotenv
-streamlit-analytics2
+streamlit-google-analytics-tag
