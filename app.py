@@ -21,6 +21,14 @@ import json
 from src.api_offres import get_offres_data_multi
 
 import streamlit.components.v1 as components
+import streamlit_analytics2 as streamlit_analytics
+
+with streamlit_analytics.track():
+    # tout ton code Streamlit ici
+    st.set_page_config(
+        page_title="Marché du travail de la data en France",
+        layout="wide"
+    )
 
 # =========================
 # CONFIGURATION DE LA PAGE
