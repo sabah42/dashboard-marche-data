@@ -2,12 +2,16 @@ import os
 import re
 import requests
 import pandas as pd
+import streamlit as st
 from dotenv import load_dotenv
 
 load_dotenv()
 
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+CLIENT_ID = st.secrets.get("CLIENT_ID", os.getenv("CLIENT_ID"))
+CLIENT_SECRET = st.secrets.get("CLIENT_SECRET", os.getenv("CLIENT_SECRET"))
+
+if not CLIENT_ID or not CLIENT_SECRET:
+    raise ValueError("CLIENT_ID ou CLIENT_SECRET manquant")
 
 
 def simplifier_contrat(type_contrat, intitule=None):
